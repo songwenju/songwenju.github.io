@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>songwenju blog</title>
+  <subtitle>前进一步，再一步</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.songwenju.me/"/>
+  <updated>2016-07-30T08:47:53.452Z</updated>
+  <id>http://www.songwenju.me/</id>
+  
+  <author>
+    <name>songwenju</name>
+    <email>songwenju_it@163.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>my new post</title>
+    <link href="http://www.songwenju.me/blog/my-new-post20160730/"/>
+    <id>http://www.songwenju.me/blog/my-new-post20160730/</id>
+    <published>2016-07-30T08:47:53.000Z</published>
+    <updated>2016-07-30T08:47:53.452Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
