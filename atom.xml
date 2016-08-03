@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.songwenju.me/"/>
-  <updated>2016-08-03T13:50:49.527Z</updated>
+  <updated>2016-08-03T15:18:29.230Z</updated>
   <id>http://www.songwenju.me/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>为Android开发打造舒服的Ubuntu——Ubuntu安装配置及神器的安装</title>
+    <title>为Android开发打造舒服的Ubuntu（一）Ubuntu安装配置及神器的安装</title>
     <link href="http://www.songwenju.me/blog/%E4%B8%BAAndroid%E5%BC%80%E5%8F%91%E6%89%93%E9%80%A0%E8%88%92%E6%9C%8D%E7%9A%84Ubuntu%EF%BC%88%E4%B8%80%EF%BC%89Ubuntu%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%A5%9E%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%8520160802/"/>
     <id>http://www.songwenju.me/blog/为Android开发打造舒服的Ubuntu（一）Ubuntu安装配置及神器的安装20160802/</id>
     <published>2016-08-02T14:26:53.000Z</published>
-    <updated>2016-08-03T13:50:49.527Z</updated>
+    <updated>2016-08-03T15:18:29.230Z</updated>
     
-    <content type="html"><![CDATA[<p>  正儿八经用Ubuntu已经快一年了，这一年从熟悉Linux的基本命令到学写简单的脚本，越来越发现已经喜欢上它了。方便之处比如说进入某个层级很深的目录或用adb连接开发板等，用一个简单的shell脚本，然后敲一个单词就搞定了，对于shell脚本可以以后来展开。今天写这一篇博客是因为我近电脑升级了，不仅是主机升级，内存也从4G翻了4倍到了16G，用起来心里美多了，这个时候就需要重新的安装和配置Ubuntu系统，在这里记录和分享一下配置的过程。</p>
+    <content type="html"><![CDATA[<p>  正儿八经用Ubuntu已经快一年了，这一年从熟悉Linux的基本命令到学写简单的脚本，越来越发现已经喜欢上它了。方便之处比如说进入某个层级很深的目录或用adb连接开发板等，用一个简单的shell脚本，然后敲一个单词就搞定了，对于shell脚本可以以后来展开。今天写这一篇博客是因为我的电脑升级了，不仅是主机升级，内存也从4G翻了4倍到了16G，用起来心里美多了，这个时候就需要重新的安装和配置Ubuntu系统，在这里记录和分享一下配置的过程。</p>
 <p>一.U盘安装和系统更新</p>
 <p>   1.下载Ubuntu的.iso文件,可以在Ubuntu官网上下载。</p>
 <p>   2.制作u盘启动盘。参考下面教程：</p>
@@ -43,39 +43,41 @@
 <p>注：这几篇blog有重复的地方，也有相互补充的地方。另外在使用第二篇更新软件源时，一定要进行备份和选择对应的版本拷贝，比如我的是Ubuntu14.04。</p>
 <p> 2.除了上面三篇博客说的那些，还要进行一些其他的配置</p>
 <p>   1）对fireFox的设置。</p>
-<p>  <img src="http://songwenju.me/linux神器/firefox.png" alt=""></p>
+<p>  <img src="http://songwenju.me/uploads/linuxArtifact/firefox.png" alt=""></p>
 <p>   在没有翻墙之前设置firefox对百度的支持。</p>
 <p>   i.设置主页为百度，如上图，HomePage填写Baidu的网址。</p>
 <p>   ii.设置百度为默认的搜索引擎：右边菜单——&gt;preference(选项)——&gt;search——&gt;add more search engine ，翻三页找到百度，然后add to firefox，然后设置百度为默认搜索引擎。</p>
 <p>  2）安装为之笔记（个人习惯），并添加firefox的为之笔记的插件，轻松截取相关的页面</p>
 <p>   i.安装为知笔记</p>
 <p>   从官方PPA仓库安装：</p>
-<pre><code>`$ sudo add-apt-repository ppa:wiznote-team
+<pre><code>$ sudo add-apt-repository ppa:wiznote-team
 
- $ sudo apt-get update
+$ sudo apt-get update
 
- $ sudo apt-get install wiznote`
+$ sudo apt-get install wiznote
 </code></pre><p>   ii.firefox插件的安装</p>
 <p>   点击下载并手动安装，下载解压后将.xpi文件拖拽到Firefox窗口内即可。</p>
 <p>   3）安装搜狗输入法，参考下面的教程。</p>
 <p>  <a href="http://jingyan.baidu.com/article/ad310e80ae6d971849f49ed3.html" title=" http://jingyan.baidu.com/article/ad310e80ae6d971849f49ed3.html" target="_blank" rel="external"> http://jingyan.baidu.com/article/ad310e80ae6d971849f49ed3.html</a></p>
 <p>   4）安装wine QQ</p>
 <p>   i.在Linux 麒麟网站下载winqq：<a href="http://www.ubuntukylin.com/application/" title="http://www.ubuntukylin.com/application/" target="_blank" rel="external">http://www.ubuntukylin.com/application/</a></p>
-<p>   ii.解压安装。</p>
+<p>   ii. 具体安装流程可以参考下面的blog：<br>    <a href="http://www.linuxdiyf.com/linux/15428.html" title="     http://www.linuxdiyf.com/linux/15428.html " target="_blank" rel="external">     http://www.linuxdiyf.com/linux/15428.html </a></p>
 <p>   5）在左侧菜单添加“显示桌面”和“工作空间切换器”，“显示桌面”可以在打开页多的情况下方便的回到桌面。“工作空间切换器”可以为不同的工作空间添加任务。使用alt + ctrl +”上下左右键” 来切换。设置如下。</p>
 <pre><code>systmSetting ——&gt; apprence ——&gt; behavior
-</code></pre><p>三，神器部分</p>
+</code></pre><p>   <img src="http://songwenju.me/uploads/linuxArtifact/showDesktop.png" alt=""></p>
+<p>三，神器部分</p>
 <p>   到了令人激动人心的时候了。</p>
 <p>   1.护眼神器：f.lux</p>
 <p>   作为开发人员，长期对着电脑，要对眼睛进行保护。这里使用f.lux,相关安装教程如下：</p>
 <p>  <a href="http://my.oschina.net/u/2003106/blog/374003" title=" http://my.oschina.net/u/2003106/blog/374003" target="_blank" rel="external"> http://my.oschina.net/u/2003106/blog/374003</a></p>
-<p> <img src="http://songwenju.me/linux神器/flux.png" alt=""><br>   安装完毕后，设置经纬度，如上图，注意加上N（北纬）和E（东经），我开始没有设置就调整不对。</p>
+<p> <img src="http://songwenju.me/uploads/linuxArtifact/flux.png" alt=""></p>
+<p>   安装完毕后，设置经纬度，如上图，注意加上N（北纬）和E（东经），我开始没有设置就调整不对。</p>
 <p>   2.屏幕取色神器：gcolor2</p>
 <p>  Android程序员要对一些颜色进行设置，这里使用gcolor2,使用起来也超级简单，点击吸管，然后在屏幕上取色就可以了。取到的颜色就会在面板上显示。安装命令：</p>
 <pre><code>sudo apt-get install gcolor2
 </code></pre><p>   安装完毕，在终端输入gcolor，点击enter。打开后可以固定到左侧菜单栏。</p>
 <p>  3.屏幕尺子：screenRuler 在软件中心中下载安装</p>
-<p>   <img src="http://songwenju.me/linux神器/ruler.png" alt=""></p>
+<p>   <img src="http://songwenju.me/uploads/linuxArtifact/ruler.png" alt=""></p>
 <p>   4.查看合并冲突神器：kdiff3，安装命令：</p>
 <pre><code>sudo apt-get install  kdiff3
 </code></pre><p>   5.类似与window的画画板工具：kolourpaint4，用它可以在写文档时画一些简单的流程图。</p>
@@ -83,7 +85,12 @@
 
 打开：kolourpaint
 </code></pre><p>   6.思维导图工具：FreeMind</p>
+<p>从软件中心下载安装，下载完毕后图标会出现在左侧菜单栏，点击启动。</p>
+<p>7.一款炫酷的启动面板：Cairo Dock，如图：</p>
+<p>  <img src="http://songwenju.me/uploads/linuxArtifact/CairoDock.png" alt=""></p>
+<p>安装参考教程：<a href="http://www.linuxidc.com/Linux/2014-10/108367.htm" title="http://www.linuxidc.com/Linux/2014-10/108367.htm " target="_blank" rel="external">http://www.linuxidc.com/Linux/2014-10/108367.htm </a></p>
 <p>   先写这么多的神器，大家如果有好的神器，请留言推荐一下，感觉好用的我会添加上。</p>
+<p><strong>版权声明：本文为博主原创文章，未经博主允许不得转载。</strong></p>
 ]]></content>
     
     <summary type="html">
