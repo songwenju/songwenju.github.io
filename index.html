@@ -300,6 +300,175 @@
             
               
                 
+                <a class="post-title-link" href="/blog/为Android开发打造舒服的Ubuntu（二）java和AndroidStudio的配置20160804/" itemprop="url">
+                  为Android开发打造舒服的Ubuntu（二）Ubuntu安装配置及神器的安装
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-04T08:33:27+08:00" content="2016-08-04">
+              2016-08-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/为Android开发打造舒服的Ubuntu（二）java和AndroidStudio的配置20160804/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/为Android开发打造舒服的Ubuntu（二）java和AndroidStudio的配置20160804/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/为Android开发打造舒服的Ubuntu（二）java和AndroidStudio的配置20160804/" class="leancloud_visitors" data-flag-title="为Android开发打造舒服的Ubuntu（二）Ubuntu安装配置及神器的安装">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>上一篇<a href="http://songwenju.me/blog/%E4%B8%BAAndroid%E5%BC%80%E5%8F%91%E6%89%93%E9%80%A0%E8%88%92%E6%9C%8D%E7%9A%84Ubuntu%EF%BC%88%E4%B8%80%EF%BC%89Ubuntu%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%A5%9E%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%8520160802/" title="博文" target="_blank" rel="external">博文</a>介绍了Ubuntu的安装和配置，以及一些神器的安装，这一篇介绍java和Android Studio的配置。</p>
+<p>一，下载java和配置java环境变量</p>
+<p>参考下面教程：</p>
+<p><a href="http://www.linuxidc.com/Linux/2015-01/112030.htm" title="http://www.linuxidc.com/Linux/2015-01/112030.htm " target="_blank" rel="external">http://www.linuxidc.com/Linux/2015-01/112030.htm </a></p>
+<p>二，下载Android Studio及Sdk</p>
+<p>下载地址：<a href="http://www.androiddevtools.cn/" title="http://www.androiddevtools.cn/" target="_blank" rel="external">http://www.androiddevtools.cn/</a></p>
+<p>下载完毕后，解压安装到相应的位置。</p>
+<p>三， 为Android studio添加启动图标</p>
+<p>   AS在linux不能直接单击打开，需要用打开shell脚本的方式打开，在终端输入：. studio.sh</p>
+<p>   这里配置启动图标。可以搜索（点击键盘的windows键），打开后可以把它固定在左侧启动栏，下次直接点击打开。</p>
+<p>   1）位置：/usr/share/applications</p>
+<p>   2）新建文件：studio.desktop,将下列配置文件拷入并修改studio.sh的目录和图标的目录：</p>
+<pre><code>[Desktop Entry]             
+
+  Encoding=UTF-8
+
+ Name=Android Studio
+
+ Comment=Android studio
+
+ Exec=/home/songwenju/Documents/develop/as/android-studio/bin/studio.sh   （修改成你自己的）
+
+  Icon=/home/songwenju/Documents/develop/as/android-studio/bin/studio.png（修改成你自己的）
+
+ Terminal=false
+
+ StartupNotify=true
+
+ Type=Application
+
+ Categories=Application;Development;
+</code></pre><p>   然后搜索可以看到studio的图标。</p>
+<p>   <img src="http://songwenju.me/uploads/linuxArtifact/studio.png" alt=""></p>
+<p>四，导入之前备份的设置setting.jar</p>
+<p>   如果你之前在Linux上导出过setting.jar,可以直接导入。</p>
+<p>   打开studio,file——import settings…</p>
+<p>五，配置adb环境变量</p>
+<p>   和配置java的环境变量类似，这里在～/.bashrc 文件中添加ADB的配置，adb的路径在sdk的platform-tools下。我的相关配置信息如下：</p>
+<p> <img src="http://songwenju.me/uploads/linuxArtifact/adb.png" alt=""></p>
+<p>   修改完.bashrc之后使用source命令，一方面检查是否出错，另一方面使代码立即生效。</p>
+<p>版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/blog/为Android开发打造舒服的Ubuntu（一）Ubuntu安装配置及神器的安装20160802/" itemprop="url">
                   为Android开发打造舒服的Ubuntu（一）Ubuntu安装配置及神器的安装
                 </a>
@@ -447,6 +616,7 @@ $ sudo apt-get install wiznote
 <p>  <img src="http://songwenju.me/uploads/linuxArtifact/CairoDock.png" alt=""></p>
 <p>安装参考教程：<a href="http://www.linuxidc.com/Linux/2014-10/108367.htm" title="http://www.linuxidc.com/Linux/2014-10/108367.htm " target="_blank" rel="external">http://www.linuxidc.com/Linux/2014-10/108367.htm </a></p>
 <p>   先写这么多的神器，大家如果有好的神器，请留言推荐一下，感觉好用的我会添加上。</p>
+<p>对于java和Android Studio的配置参考我下一篇博文：</p>
 <p><strong>版权声明：本文为博主原创文章，未经博主允许不得转载。</strong></p>
 
           
@@ -517,7 +687,7 @@ $ sudo apt-get install wiznote
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
