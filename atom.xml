@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.songwenju.me/"/>
-  <updated>2016-08-08T14:54:37.211Z</updated>
+  <updated>2016-08-08T14:55:37.669Z</updated>
   <id>http://www.songwenju.me/</id>
   
   <author>
@@ -20,25 +20,28 @@
     <link href="http://www.songwenju.me/blog/%E4%B8%BAandroid%E5%BC%80%E5%8F%91%E6%89%93%E9%80%A0%E8%88%92%E6%9C%8D%E7%9A%84Ubuntu%EF%BC%88%E4%B8%89%EF%BC%89Android%20studio%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%9320160808/"/>
     <id>http://www.songwenju.me/blog/为android开发打造舒服的Ubuntu（三）Android studio的个人总结20160808/</id>
     <published>2016-08-08T14:11:30.000Z</published>
-    <updated>2016-08-08T14:54:37.211Z</updated>
+    <updated>2016-08-08T14:55:37.669Z</updated>
     
     <content type="html"><![CDATA[<p>上一篇文章<a href="http://www.jianshu.com/p/3c3e505020bf" target="_blank" rel="external">为Android开发打造舒服的Ubuntu（二）java和AndroidStudio的配置</a>这里面介绍了对Android studio的一些配置，这一篇博客我将会介绍我自己对Studio使用的一些总结。</p>
 <p>这一篇文章从以下几个方面介绍。</p>
+<font color="#00ffff">
+
 <ul>
-<li><font color="#00ffff"><a href="#第一节">第一节 配置多个project在一个窗口显示</a></font><ul>
+<li><a href="#第一节">第一节 配置多个project在一个窗口显示</a><ul>
 <li><a href="#1.1">1.1</a></li>
 <li><a href="#1.2">1.2</a></li>
 </ul>
 </li>
-<li><a href="#第二节">第二节 Android Studio其他令人叫好的技巧</a><ul>
+<li><p><a href="#第二节">第二节 Android Studio其他令人叫好的技巧</a></p>
+<ul>
 <li><a href="#2.1">2.1</a></li>
 <li><a href="#2.2">2.2</a></li>
 </ul>
-</li>
-</ul>
-<p></p><h2 id="第一节">第一节 配置多个project在一个窗口显示</h2><br>   第一节 添加文章页内导航<p></p>
-<p>   第一节 添加文章页内导航</p>
-<p>   第一节 添加文章页内导航<br>   </p><h3 id="1.1">1.1</h3><br>   1.1<br>   1.1<br>   <h3 id="1.2">1.2</h3><br>   1.2<br>   1.2<br>   1.2<br>   <h2 id="第二节">第二节 Android Studio使用过程中遇到想见恨晚的功能</h2><br>   第二节 添加文章页内导航<br>   第二节 添加文章页内导航<br>   第二节 添加文章页内导航<br>   <h3 id="2.1">2.1</h3><br>   1.1<br>   1.1<br>   <h3 id="2.2">2.2</h3><br>   2.2<br>   2.2<br>   2.2<p></p>
+<p></p></li></ul></font><br><h2 id="第一节">第一节 配置多个project在一个窗口显示</h2><br>第一节 添加文章页内导航<p></p>
+<p>第一节 添加文章页内导航</p>
+<p>第一节 添加文章页内导航<br></p><h3 id="1.1">1.1</h3><br>1.1<br>1.1<br><h3 id="1.2">1.2</h3><br>1.2<br>1.2<br>1.2<br><h2 id="第二节">第二节 Android Studio使用过程中遇到想见恨晚的功能</h2><br>第二节 添加文章页内导航<br>第二节 添加文章页内导航<br>第二节 添加文章页内导航<br><h3 id="2.1">2.1</h3><br>1.1<br>1.1<br><h3 id="2.2">2.2</h3><br>2.2<br>2.2<br>2.2<p></p>
+
+
 ]]></content>
     
     <summary type="html">
