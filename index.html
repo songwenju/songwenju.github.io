@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="songwenju's blog" type="application/atom+xml" />
 
@@ -301,7 +303,7 @@
               
                 
                 <a class="post-title-link" href="/blog/为android开发打造舒服的Ubuntu（三）Android studio的个人总结20160808/" itemprop="url">
-                  为android开发打造舒服的Ubuntu（三）Android Studio使用过程中遇到想见恨晚的技巧
+                  为android开发打造舒服的Ubuntu（三）Android Studio想见恨晚的小技巧
                 </a>
               
             
@@ -372,24 +374,12 @@
           
             <p>上一篇文章<a href="http://www.jianshu.com/p/3c3e505020bf" target="_blank" rel="external">为Android开发打造舒服的Ubuntu（二）java和AndroidStudio的配置</a>这里面介绍了对Android studio的一些配置，这一篇博客我将会介绍我自己对Studio使用的一些总结。</p>
 <p>这一篇文章从以下几个方面介绍。</p>
-<font color="#4183C4">
+<font color="#4183C4"><br><br>  <em>   <a href="#第一节">第一节 快速配置多个project在一个窗口显示</a>
 
-<ul>
-<li><a href="#第一节">第一节 配置多个project在一个窗口显示</a><ul>
-<li><a href="#1.1">1.1</a></li>
-<li><a href="#1.2">1.2</a></li>
-</ul>
-</li>
-<li><p><a href="#第二节">第二节 Android Studio其他令人叫好的技巧</a></p>
-<ul>
-<li><a href="#2.1">2.1</a></li>
-<li><a href="#2.2">2.2</a></li>
-</ul>
-<p></p></li></ul></font><br><h2 id="第一节">第一节 配置多个project在一个窗口显示</h2><br>第一节 添加文章页内导航<p></p>
-<p>第一节 添加文章页内导航</p>
-<p>第一节 添加文章页内导航<br></p><h3 id="1.1">1.1</h3><br>1.1<br>1.1<br><h3 id="1.2">1.2</h3><br>1.2<br>1.2<br>1.2<br><h2 id="第二节">第二节 Android Studio使用过程中遇到想见恨晚的功能</h2><br>第二节 添加文章页内导航<br>第二节 添加文章页内导航<br>第二节 添加文章页内导航<br><h3 id="2.1">2.1</h3><br>1.1<br>1.1<br><h3 id="2.2">2.2</h3><br>2.2<br>2.2<br>2.2<p></p>
+  </em>   <a href="#第二节">第二节 Android Studio其他令人叫好的技巧</a><br><br><br> </font>
 
-
+<p></p><h2 id="第一节">第一节 快速配置多个project在一个窗口显示</h2><br> 用过eclipse的都知道eclipse中的一个窗口可以展示多个project，对于Android studio来说，推荐的是Module来出现在一个Project中。我们是做产品开发，我们项目提交到服务器分支上都不依赖Android Studio或者eclipse的配置文件，我们是用mm -B去单编整个项目。对于开发来说，我自己本身就负责了一个中等的项目和三个小项目，并且编辑也在仓库的位置，如何快速的将多个项目引入studio。这里经过探索，发现下面的这种方式。将原始项目工程（eclipse相关工程）以module的形式引入到studio中。<br>   具体分为以下几个步骤：<p></p>
+<p>  </p><h3>1. 在任意工程下新建项目，我这里起名为5520-mtk</h3><br>  <h3>2. 在settings.gradle文件中添加下面两行，UserSpace是工程名</h3><br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line"> include &apos;:UserSpace&apos;</div><div class="line"></div><div class="line">project(&apos;:UserSpace&apos;).projectDir = new File(settingsDir, &apos;../../../Documents/UserSpace&apos;)</div></pre></td></tr></table></figure><p></p>
 
           
         
