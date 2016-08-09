@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.songwenju.me/"/>
-  <updated>2016-08-09T14:23:21.508Z</updated>
+  <updated>2016-08-09T14:25:37.641Z</updated>
   <id>http://www.songwenju.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.songwenju.me/blog/%E4%B8%BAandroid%E5%BC%80%E5%8F%91%E6%89%93%E9%80%A0%E8%88%92%E6%9C%8D%E7%9A%84Ubuntu%EF%BC%88%E4%B8%89%EF%BC%89Android%20studio%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%9320160808/"/>
     <id>http://www.songwenju.me/blog/为android开发打造舒服的Ubuntu（三）Android studio的个人总结20160808/</id>
     <published>2016-08-08T14:11:30.000Z</published>
-    <updated>2016-08-09T14:23:21.508Z</updated>
+    <updated>2016-08-09T14:25:37.641Z</updated>
     
     <content type="html"><![CDATA[<p>上一篇文章<a href="http://www.jianshu.com/p/3c3e505020bf" target="_blank" rel="external">为Android开发打造舒服的Ubuntu（二）java和AndroidStudio的配置</a>这里面介绍了对Android studio的一些配置，这一篇博客我将会介绍我自己对Studio使用的一些总结。</p>
 <p>这一篇文章从以下几个方面介绍。</p>
