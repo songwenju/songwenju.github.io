@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.songwenju.me/"/>
-  <updated>2016-08-24T15:11:11.518Z</updated>
+  <updated>2016-08-24T15:14:49.789Z</updated>
   <id>http://www.songwenju.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.songwenju.me/blog/RxBus%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A320160824/"/>
     <id>http://www.songwenju.me/blog/RxBus的使用详解20160824/</id>
     <published>2016-08-24T15:03:32.000Z</published>
-    <updated>2016-08-24T15:11:11.518Z</updated>
+    <updated>2016-08-24T15:14:49.789Z</updated>
     
     <content type="html"><![CDATA[<p>前一阶段，组内做技术分享，我给大家分享了RxJava的使用,这次分享也是我对RxJava一个快速学习和掌握的过程，分享的时候讲到了RxBus，在此之前我还没有用过RxBus，新项目尝试用一下。用法和EventBus类似，优点是少引入一个jar。<br>步骤如下：</p>
 <p>1.先引入RxJava的jar包，这里只涉及RxJava.<br>   <code>compile &#39;io.reactivex:rxjava:1.1.9&#39;</code><br>2.定义一个RxBus类。</p>
@@ -134,7 +134,7 @@ protected void onCreate(Bundle savedInstanceState) {
         unSubscribe();
     }</code></p>
 <p>Demo已经上传到Github上了<a href="https://github.com/songwenju/RxBusDemo" title="RxBus Demo" target="_blank" rel="external">RxBusDemo</a></p>
-<p>Demo的效果如下：</p>
+<p>Demo的效果如下：<br>    <img src="http://songwenju.me/uploads/RxBus/RxBus.gif" alt=""></p>
 ]]></content>
     
     <summary type="html">
