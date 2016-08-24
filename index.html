@@ -370,40 +370,56 @@
       
         
           
-            <p>前一阶段，组内做技术分享，我给大家分享了RxJava的使用。在分享的时候，这次分享也是我对RxJava一个快速学习和掌握的过程，分享的时候讲到了RxBus，在此之前我还没有用过RxBus，新项目尝试用一下。用法和EventBus类似，优点是少引入一个jar。<br>步骤如下：</p>
-<p>1.先引入RxJava的jar包，这里只涉及RxJava.<br>   <code>compile &#39;io.reactivex:rxjava:1.1.9&#39;</code><br>2.定义一个RxBus类。<br>`/**</p>
-<ul>
-<li><p>RxBus<br>*/<br>public class RxBus {</p>
-<p> private static volatile RxBus mInstance;<br> private final Subject<object, object=""> bus;</object,></p>
-<p> private RxBus() {</p>
-<pre><code>bus = new SerializedSubject&lt;&gt;(PublishSubject.create());
-</code></pre><p> }</p>
-<p> /**</p>
-<ul>
-<li>单例RxBus<br>*</li>
-<li><p>@return RxBus<br>*/<br>public static RxBus getInstance() {<br> RxBus rxBus = mInstance;<br> if (mInstance == null) {</p>
-<pre><code>synchronized (RxBus.class) {
-    rxBus = mInstance;
-    if (mInstance == null) {
-        rxBus = new RxBus();
-        mInstance = rxBus;
+            <p>前一阶段，组内做技术分享，我给大家分享了RxJava的使用,这次分享也是我对RxJava一个快速学习和掌握的过程，分享的时候讲到了RxBus，在此之前我还没有用过RxBus，新项目尝试用一下。用法和EventBus类似，优点是少引入一个jar。<br>步骤如下：</p>
+<p>1.先引入RxJava的jar包，这里只涉及RxJava.<br>   <code>compile &#39;io.reactivex:rxjava:1.1.9&#39;</code><br>2.定义一个RxBus类。</p>
+<p>  `<br>    public class RxBus {</p>
+<pre><code>   private static volatile RxBus mInstance;
+   private final Subject&lt;Object, Object&gt; bus;
+
+    private RxBus() {
+        bus = new SerializedSubject&lt;&gt;(PublishSubject.create());
     }
+
+    /**
+     *单例RxBus
+     *@return RxBus
+     */
+    public static RxBus getInstance() {
+        RxBus rxBus = mInstance;
+        if (mInstance == null) {
+            synchronized (RxBus.class) {
+                rxBus = mInstance;
+                if (mInstance == null) {
+                    rxBus = new RxBus();
+                    mInstance = rxBus;
+                }
+            }
+        }
+        return rxBus;
+    }
+
+    /**
+     *发送一个新事件
+     *
+     *@param o
+     */
+    public void send(Object o) {
+        bus.onNext(o);
+    }
+
+    /**
+     *返回特定类型的被观察者
+     *
+     *@param eventType eventType
+     *@param &lt;T&gt;
+     *@return
+     */
+    public &lt;T&gt; Observable&lt;T&gt; toObservable(Class&lt;T&gt; eventType) {
+        return bus.ofType(eventType);
+    }
+
 }
-</code></pre><p> }<br> return rxBus;<br>}</p>
-<p>/**</p>
-</li>
-<li>发送一个新事件<br>*</li>
-<li><p>@param o<br>*/<br>public void send(Object o) {<br> bus.onNext(o);<br>}</p>
-<p>/**</p>
-</li>
-<li>返回特定类型的被观察者<br>*</li>
-<li>@param eventType eventType</li>
-<li>@param <t></t></li>
-<li>@return<br>*/<br>public <t> Observable<t> toObservable(Class<t> eventType) {<br> return bus.ofType(eventType);<br>}</t></t></t></li>
-</ul>
-</li>
-</ul>
-<p>}<br><code>3.定义一个事件对应的Event</code>public class CalculateEvent {<br>    String result;    //计算的结果</p>
+</code></pre><p><code>3.定义一个事件对应的Event</code>public class CalculateEvent {<br>    String result;    //计算的结果</p>
 <pre><code>public CalculateEvent(String result) {
     this.result = result;
 }
@@ -433,40 +449,40 @@ protected void onCreate(Bundle savedInstanceState) {
     //订阅下载事件
     subscribeDownloadEvent();
 }`
-</code></pre><p>  5.2处理事件<br>   `/**</p>
-<pre><code> * RxBus  subscribeDownloadEvent()
- */
-private void subscribeDownloadEvent() {
-    rxSubscriptions.add(RxBus.getInstance().toObservable(CalculateEvent.class)
-            .map(new Func1&lt;Object, CalculateEvent&gt;() {
-                @Override
-                public CalculateEvent call(Object o) {
-                    return (CalculateEvent) o;
-                }
-            })
-            .subscribe(new Action1&lt;CalculateEvent&gt;() {
-                @Override
-                public void call(CalculateEvent calculateEvent) {
-                    Log.i(TAG, &quot;MainActivity.call.&quot; + calculateEvent.toString());
-                }
-            }));
-}`
-</code></pre><p>   5.3取消订阅，防止内存泄漏<br>   `/* </p>
-<pre><code> * 取消订阅，防止内存泄漏
- */
-private void unSubscribe() {
-    Log.i(TAG,&quot;MainActivity.unSubscribe.&quot;);
-    if (!rxSubscriptions.isUnsubscribed()) {
-        rxSubscriptions.unsubscribe();
-    }
-}`
-</code></pre><p>   在OnDestory方法中去取消。<br>    <code>@Override
+</code></pre><p>  5.2处理事件<br>   <code>/**
+     *RxBus  subscribeDownloadEvent()
+     */
+    private void subscribeDownloadEvent() {
+        rxSubscriptions.add(RxBus.getInstance().toObservable(CalculateEvent.class)
+                .map(new Func1&lt;Object, CalculateEvent&gt;() {
+                    @Override
+                    public CalculateEvent call(Object o) {
+                        return (CalculateEvent) o;
+                    }
+                })
+                .subscribe(new Action1&lt;CalculateEvent&gt;() {
+                    @Override
+                    public void call(CalculateEvent calculateEvent) {
+                        Log.i(TAG, &quot;MainActivity.call.&quot; + calculateEvent.toString());
+                    }
+                }));
+    }</code><br>   5.3取消订阅，防止内存泄漏<br>   <code>/* 
+     *取消订阅，防止内存泄漏
+     */
+    private void unSubscribe() {
+        Log.i(TAG,&quot;MainActivity.unSubscribe.&quot;);
+        if (!rxSubscriptions.isUnsubscribed()) {
+            rxSubscriptions.unsubscribe();
+        }
+    }</code></p>
+<p>   在OnDestory方法中去取消。<br>    <code>@Override
     protected void onDestroy() {
         super.onDestroy();
         //取消订阅
         unSubscribe();
     }</code></p>
 <p>Demo已经上传到Github上了<a href="https://github.com/songwenju/RxBusDemo" title="RxBus Demo" target="_blank" rel="external">RxBusDemo</a></p>
+<p>Demo的效果如下：</p>
 
           
         
