@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前进一步，再一步" />
+  <meta name="keywords" content="Android," />
 
 
 
@@ -86,16 +86,19 @@
 
 
 
-<meta name="description" content="欢快的写博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://www.songwenju.me/tags/index.html">
+<meta name="description" content="前一阶段，组内做技术分享，我给大家分享了RxJava的使用。在分享的时候，这次分享也是我对RxJava一个快速学习和掌握的过程，分享的时候讲到了RxBus，在此之前我还没有用过RxBus，新项目尝试用一下。用法和EventBus类似，优点是少引入一个jar。步骤如下：
+1.先引入RxJava的jar包，这里只涉及RxJava.   compile &amp;#39;io.reactivex:rxjava:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RxBus的使用详解">
+<meta property="og:url" content="http://www.songwenju.me/blog/RxBus的使用详解20160824/index.html">
 <meta property="og:site_name" content="songwenju's blog">
-<meta property="og:description" content="欢快的写博客">
-<meta property="og:updated_time" content="2016-07-31T14:29:03.227Z">
+<meta property="og:description" content="前一阶段，组内做技术分享，我给大家分享了RxJava的使用。在分享的时候，这次分享也是我对RxJava一个快速学习和掌握的过程，分享的时候讲到了RxBus，在此之前我还没有用过RxBus，新项目尝试用一下。用法和EventBus类似，优点是少引入一个jar。步骤如下：
+1.先引入RxJava的jar包，这里只涉及RxJava.   compile &amp;#39;io.reactivex:rxjava:">
+<meta property="og:updated_time" content="2016-08-24T15:05:17.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="欢快的写博客">
+<meta name="twitter:title" content="RxBus的使用详解">
+<meta name="twitter:description" content="前一阶段，组内做技术分享，我给大家分享了RxJava的使用。在分享的时候，这次分享也是我对RxJava一个快速学习和掌握的过程，分享的时候讲到了RxBus，在此之前我还没有用过RxBus，新项目尝试用一下。用法和EventBus类似，优点是少引入一个jar。步骤如下：
+1.先引入RxJava的jar包，这里只涉及RxJava.   compile &amp;#39;io.reactivex:rxjava:">
 
 
 
@@ -116,15 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://www.songwenju.me/tags/"/>
+  <link rel="canonical" href="http://www.songwenju.me/blog/RxBus的使用详解20160824/"/>
 
-  <title>
-  
-
-  
-    标签 | songwenju's blog
-  
-</title>
+  <title> RxBus的使用详解 | songwenju's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -155,7 +152,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -285,16 +282,265 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 2 个标签
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                RxBus的使用详解
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-24T23:03:32+08:00" content="2016-08-24">
+              2016-08-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/RxBus的使用详解20160824/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/RxBus的使用详解20160824/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
         </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/Android/" style="font-size: 12px; color: #ccc">Android</a> <a href="/tags/Android-Linux-linux神器/" style="font-size: 30px; color: #111">Android, Linux ,linux神器</a>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前一阶段，组内做技术分享，我给大家分享了RxJava的使用。在分享的时候，这次分享也是我对RxJava一个快速学习和掌握的过程，分享的时候讲到了RxBus，在此之前我还没有用过RxBus，新项目尝试用一下。用法和EventBus类似，优点是少引入一个jar。<br>步骤如下：</p>
+<p>1.先引入RxJava的jar包，这里只涉及RxJava.<br>   <code>compile &#39;io.reactivex:rxjava:1.1.9&#39;</code><br>2.定义一个RxBus类。<br>`/**</p>
+<ul>
+<li><p>RxBus<br>*/<br>public class RxBus {</p>
+<p> private static volatile RxBus mInstance;<br> private final Subject<object, object=""> bus;</object,></p>
+<p> private RxBus() {</p>
+<pre><code>bus = new SerializedSubject&lt;&gt;(PublishSubject.create());
+</code></pre><p> }</p>
+<p> /**</p>
+<ul>
+<li>单例RxBus<br>*</li>
+<li><p>@return RxBus<br>*/<br>public static RxBus getInstance() {<br> RxBus rxBus = mInstance;<br> if (mInstance == null) {</p>
+<pre><code>synchronized (RxBus.class) {
+    rxBus = mInstance;
+    if (mInstance == null) {
+        rxBus = new RxBus();
+        mInstance = rxBus;
+    }
+}
+</code></pre><p> }<br> return rxBus;<br>}</p>
+<p>/**</p>
+</li>
+<li>发送一个新事件<br>*</li>
+<li><p>@param o<br>*/<br>public void send(Object o) {<br> bus.onNext(o);<br>}</p>
+<p>/**</p>
+</li>
+<li>返回特定类型的被观察者<br>*</li>
+<li>@param eventType eventType</li>
+<li>@param <t></t></li>
+<li>@return<br>*/<br>public <t> Observable<t> toObservable(Class<t> eventType) {<br> return bus.ofType(eventType);<br>}</t></t></t></li>
+</ul>
+</li>
+</ul>
+<p>}<br><code>3.定义一个事件对应的Event</code>public class CalculateEvent {<br>    String result;    //计算的结果</p>
+<pre><code>public CalculateEvent(String result) {
+    this.result = result;
+}
+
+public String getResult() {
+    return result;
+}
+
+public void setResult(String result) {
+    this.result = result;
+}
+
+
+@Override
+public String toString() {
+    return &quot;CalculateEvent{&quot; +
+            &quot;result=&apos;&quot; + result + &apos;\&apos;&apos; +
+            &apos;}&apos;;
+}
+</code></pre><p>}<br>`</p>
+<p>4.发送事件：<br>    <code>RxBus.getInstance().send(new CalculateEvent(&quot;&quot;+ 3 * 2));</code></p>
+<p>5.在接收事件的地方要做以下几步：<br>  5.1订阅事件<br>    <code>private CompositeSubscription rxSubscriptions = new CompositeSubscription();</code></p>
+<pre><code>`@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    //订阅下载事件
+    subscribeDownloadEvent();
+}`
+</code></pre><p>  5.2处理事件<br>   `/**</p>
+<pre><code> * RxBus  subscribeDownloadEvent()
+ */
+private void subscribeDownloadEvent() {
+    rxSubscriptions.add(RxBus.getInstance().toObservable(CalculateEvent.class)
+            .map(new Func1&lt;Object, CalculateEvent&gt;() {
+                @Override
+                public CalculateEvent call(Object o) {
+                    return (CalculateEvent) o;
+                }
+            })
+            .subscribe(new Action1&lt;CalculateEvent&gt;() {
+                @Override
+                public void call(CalculateEvent calculateEvent) {
+                    Log.i(TAG, &quot;MainActivity.call.&quot; + calculateEvent.toString());
+                }
+            }));
+}`
+</code></pre><p>   5.3取消订阅，防止内存泄漏<br>   `/* </p>
+<pre><code> * 取消订阅，防止内存泄漏
+ */
+private void unSubscribe() {
+    Log.i(TAG,&quot;MainActivity.unSubscribe.&quot;);
+    if (!rxSubscriptions.isUnsubscribed()) {
+        rxSubscriptions.unsubscribe();
+    }
+}`
+</code></pre><p>   在OnDestory方法中去取消。<br>    <code>@Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //取消订阅
+        unSubscribe();
+    }</code></p>
+<p>Demo已经上传到Github上了<a href="https://github.com/songwenju/RxBusDemo" title="RxBus Demo" target="_blank" rel="external">RxBusDemo</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/weixin.jpg" alt="songwenju wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/为android开发打造舒服的Ubuntu（三）Android studio的个人总结20160808/" rel="next" title="为android开发打造舒服的Ubuntu（三）Android Studio想见恨晚的小技巧">
+                <i class="fa fa-chevron-left"></i> 为android开发打造舒服的Ubuntu（三）Android Studio想见恨晚的小技巧
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="blog/RxBus的使用详解20160824/"
+     data-title="RxBus的使用详解"
+     data-content=""
+     data-url="http://www.songwenju.me/blog/RxBus的使用详解20160824/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
   </div>
 
 
@@ -303,6 +549,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="blog/RxBus的使用详解20160824/"
+           data-title="RxBus的使用详解" data-url="http://www.songwenju.me/blog/RxBus的使用详解20160824/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -322,8 +576,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://songwenju.me/uploads/avatar.jpg"
@@ -469,6 +732,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -578,6 +852,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
