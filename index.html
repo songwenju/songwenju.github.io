@@ -372,54 +372,9 @@
           
             <p>前一阶段，组内做技术分享，我给大家分享了RxJava的使用,这次分享也是我对RxJava一个快速学习和掌握的过程，分享的时候讲到了RxBus，在此之前我还没有用过RxBus，新项目尝试用一下。用法和EventBus类似，优点是少引入一个jar。<br>步骤如下：</p>
 <p>1.先引入RxJava的jar包，这里只涉及RxJava.<br>   <code>compile &#39;io.reactivex:rxjava:1.1.9&#39;</code><br>2.定义一个RxBus类。</p>
-<p>  `<br>    public class RxBus {</p>
-<pre><code>   private static volatile RxBus mInstance;
-   private final Subject&lt;Object, Object&gt; bus;
-
-    private RxBus() {
-        bus = new SerializedSubject&lt;&gt;(PublishSubject.create());
-    }
-
-    /**
-     *单例RxBus
-     *@return RxBus
-     */
-    public static RxBus getInstance() {
-        RxBus rxBus = mInstance;
-        if (mInstance == null) {
-            synchronized (RxBus.class) {
-                rxBus = mInstance;
-                if (mInstance == null) {
-                    rxBus = new RxBus();
-                    mInstance = rxBus;
-                }
-            }
-        }
-        return rxBus;
-    }
-
-    /**
-     *发送一个新事件
-     *
-     *@param o
-     */
-    public void send(Object o) {
-        bus.onNext(o);
-    }
-
-    /**
-     *返回特定类型的被观察者
-     *
-     *@param eventType eventType
-     *@param &lt;T&gt;
-     *@return
-     */
-    public &lt;T&gt; Observable&lt;T&gt; toObservable(Class&lt;T&gt; eventType) {
-        return bus.ofType(eventType);
-    }
-
-}
-</code></pre><p><code>3.定义一个事件对应的Event</code>public class CalculateEvent {<br>    String result;    //计算的结果</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    public class RxBus &#123;</div><div class="line">      private static volatile RxBus mInstance;</div><div class="line">      private final Subject&lt;Object, Object&gt; bus;</div><div class="line"></div><div class="line">    private RxBus() &#123;</div><div class="line">        bus = new SerializedSubject&lt;&gt;(PublishSubject.create());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     *单例RxBus</div><div class="line">     *@return RxBus</div><div class="line">     */</div><div class="line">    public static RxBus getInstance() &#123;</div><div class="line">        RxBus rxBus = mInstance;</div><div class="line">        if (mInstance == null) &#123;</div><div class="line">            synchronized (RxBus.class) &#123;</div><div class="line">                rxBus = mInstance;</div><div class="line">                if (mInstance == null) &#123;</div><div class="line">                    rxBus = new RxBus();</div><div class="line">                    mInstance = rxBus;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return rxBus;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">   	/**</div><div class="line">     *发送一个新事件</div><div class="line">     *</div><div class="line">     *@param o</div><div class="line">     */</div><div class="line">    public void send(Object o) &#123;</div><div class="line">        bus.onNext(o);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     *返回特定类型的被观察者</div><div class="line">     *</div><div class="line">     *@param eventType eventType</div><div class="line">     *@param &lt;T&gt;</div><div class="line">     *@return</div><div class="line">     */</div><div class="line">    public &lt;T&gt; Observable&lt;T&gt; toObservable(Class&lt;T&gt; eventType) &#123;</div><div class="line">        return bus.ofType(eventType);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>3.定义一个事件对应的Event<br>    `</p>
+<p>   public class CalculateEvent {<br>    String result;    //计算的结果</p>
 <pre><code>public CalculateEvent(String result) {
     this.result = result;
 }
@@ -439,48 +394,25 @@ public String toString() {
             &quot;result=&apos;&quot; + result + &apos;\&apos;&apos; +
             &apos;}&apos;;
 }
-</code></pre><p>}<br>`</p>
-<p>4.发送事件：<br>    <code>RxBus.getInstance().send(new CalculateEvent(&quot;&quot;+ 3 * 2));</code></p>
-<p>5.在接收事件的地方要做以下几步：<br>  5.1订阅事件<br>    <code>private CompositeSubscription rxSubscriptions = new CompositeSubscription();</code></p>
-<pre><code>`@Override
+</code></pre><p>}</p>
+<p>`</p>
+<p>4.发送事件：</p>
+<pre><code>`RxBus.getInstance().send(new CalculateEvent(&quot;&quot;+ 3 * 2));`
+</code></pre><p>5.在接收事件的地方要做以下几步：</p>
+<p>  5.1订阅事件<br>    <code>private CompositeSubscription rxSubscriptions = new CompositeSubscription();</code></p>
+<pre><code>`
+
+@Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     //订阅下载事件
     subscribeDownloadEvent();
-}`
-</code></pre><p>  5.2处理事件<br>   <code>/**
-     *RxBus  subscribeDownloadEvent()
-     */
-    private void subscribeDownloadEvent() {
-        rxSubscriptions.add(RxBus.getInstance().toObservable(CalculateEvent.class)
-                .map(new Func1&lt;Object, CalculateEvent&gt;() {
-                    @Override
-                    public CalculateEvent call(Object o) {
-                        return (CalculateEvent) o;
-                    }
-                })
-                .subscribe(new Action1&lt;CalculateEvent&gt;() {
-                    @Override
-                    public void call(CalculateEvent calculateEvent) {
-                        Log.i(TAG, &quot;MainActivity.call.&quot; + calculateEvent.toString());
-                    }
-                }));
-    }</code><br>   5.3取消订阅，防止内存泄漏<br>   <code>/* 
-     *取消订阅，防止内存泄漏
-     */
-    private void unSubscribe() {
-        Log.i(TAG,&quot;MainActivity.unSubscribe.&quot;);
-        if (!rxSubscriptions.isUnsubscribed()) {
-            rxSubscriptions.unsubscribe();
-        }
-    }</code></p>
-<p>   在OnDestory方法中去取消。<br>    <code>@Override
-    protected void onDestroy() {
-        super.onDestroy();
-        //取消订阅
-        unSubscribe();
-    }</code></p>
+}
+</code></pre><p>`<br>  5.2处理事件<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">/**</div><div class="line"> *RxBus subscribeDownloadEvent()</div><div class="line"> */</div><div class="line"></div><div class="line">private void subscribeDownloadEvent() &#123;</div><div class="line">    rxSubscriptions.add(RxBus.getInstance().toObservable(CalculateEvent.class)</div><div class="line">            .map(new Func1&lt;Object, CalculateEvent&gt;() &#123;</div><div class="line">                @Override</div><div class="line">                public CalculateEvent call(Object o) &#123;</div><div class="line">                    return (CalculateEvent) o;</div><div class="line">                &#125;</div><div class="line">            &#125;)</div><div class="line">            .subscribe(new Action1&lt;CalculateEvent&gt;() &#123;</div><div class="line">                @Override</div><div class="line">                public void call(CalculateEvent calculateEvent) &#123;</div><div class="line">                    Log.i(TAG, &quot;MainActivity.call.&quot; + calculateEvent.toString());</div><div class="line">                &#125;</div><div class="line">            &#125;));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>   5.3取消订阅，防止内存泄漏</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">/* </div><div class="line"> *取消订阅，防止内存泄漏</div><div class="line"> */</div><div class="line">private void unSubscribe() &#123;</div><div class="line">    Log.i(TAG,&quot;MainActivity.unSubscribe.&quot;);</div><div class="line">    if (!rxSubscriptions.isUnsubscribed()) &#123;</div><div class="line">        rxSubscriptions.unsubscribe();</div><div class="line">    &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>   在OnDestory方法中去取消。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">@Override</div><div class="line">protected void onDestroy() &#123;</div><div class="line">    super.onDestroy();</div><div class="line">    //取消订阅</div><div class="line">    unSubscribe();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>Demo已经上传到Github上了<a href="https://github.com/songwenju/RxBusDemo" title="RxBus Demo" target="_blank" rel="external">RxBusDemo</a></p>
 <p>Demo的效果如下：<br>    <img src="http://songwenju.me/uploads/RxBus/RxBus.gif" alt=""></p>
 
